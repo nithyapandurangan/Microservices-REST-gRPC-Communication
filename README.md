@@ -18,7 +18,7 @@ pip install fastapi uvicorn grpcio grpcio-tools apachebench ghz
 2. **Service 2 (Processor):** Processes data received from Service 1.
 3. **Service 3 (Aggregator):** Aggregates processed data and sends responses.
 
-## Microservices Implementation
+## Microservices Implementation using FastAPI
 
 ### Service 1: Producer
 - **File:** `service1.py`
@@ -41,10 +41,13 @@ pip install fastapi uvicorn grpcio grpcio-tools apachebench ghz
   uvicorn service3:app --host 127.0.0.1 --port 8002 --reload
   ```
 
-## REST API Communication
-Test REST API communication using `curl` or tools like Postman to send requests between the services.
+## Testing REST API Communication
+Test REST API communication using `curl` 
+```bash
+ curl http://127.0.0.1:8002/aggregate 
+  ```
 
-## gRPC Communication
+## Microservices Implementation using gRPC
 ### Define gRPC Protocol:
 - **File:** `services.proto`
 
@@ -67,6 +70,12 @@ Test REST API communication using `curl` or tools like Postman to send requests 
 - **Run:**
   ```bash
   python grpc_service3.py
+  ```
+  
+## Testing gRPC Communication
+Test REST API communication using `grpcurl` 
+```bash
+ grpcurl -plaintext -d '{}' localhost:50051 ProducerService.Generate
   ```
 
 ## Performance Measurement
