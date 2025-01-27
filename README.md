@@ -1,6 +1,4 @@
-Here’s the full content for the README.md file:
 
-```markdown
 # Microservices REST API & gRPC Comparison
 
 ## Objective
@@ -110,4 +108,3 @@ ghz --insecure --proto services.proto --call AggregatorService.Aggregate -n 1000
 - **Faster Processing with gRPC:** gRPC processes requests faster due to its more efficient handling of requests (8 seconds for gRPC vs 19 seconds for REST API).
 ```
 
-You can copy and paste this into a `README.md` file in your project. Let me know if you'd like any adjustments!
