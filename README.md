@@ -106,5 +106,4 @@ ghz --insecure --proto services.proto --call AggregatorService.Aggregate -n 1000
 - **Higher CPU% for REST API:** The higher CPU usage for REST API is due to the overhead of processing HTTP requests, especially under high concurrency.
 - **Lower CPU% for gRPC:** gRPC uses a more efficient binary format (Protobuf) and HTTP/2, which leads to reduced CPU usage while handling requests concurrently.
 - **Faster Processing with gRPC:** gRPC processes requests faster due to its more efficient handling of requests (8 seconds for gRPC vs 19 seconds for REST API).
-```
 
