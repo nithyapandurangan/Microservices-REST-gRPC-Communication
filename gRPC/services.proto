@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+service ProducerService {
+    rpc Generate (Empty) returns (Data);
+}
+
+service ProcessorService {
+    rpc Process (Data) returns (ProcessedData);
+}
+
+service AggregatorService {
+    rpc Aggregate (stream ProcessedData) returns (Summary);
+}
+
+message Empty {}
+
+message Data {
+    string content = 1;
+}
+
+message ProcessedData {
+    string result = 1;
+}
+
+message Summary {
+    string summary = 1;
+}
